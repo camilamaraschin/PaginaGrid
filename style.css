@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg-primary: #28293e;
+    --fc-primary: #ffffff;
+    --fc-secondary: #bbb3e6;
+
+    font-size: 62.5%; // 10% da fonte
+    --fs-body:1.6rem;
+    --fs-heading: 4rem;
+}
+
+body{
+    background-color:var(--bg-primary);
+    color: var(--fc-primary);
+  
+}
+main{
+    display: grid;
+    gap: 3.2rem;
+}
+
+.page{
+    max-width: 33rem;
+    margin: 0 auto;
+}
+
+@media(min-width:930px) {
+:root{
+--fs-heading: 5.6rem;
+}
+    .page{
+    max-width: 117rem;
+    padding: 0 5rem;
+}
+
+main{
+    grid-template-areas: "A B B" "C C D";
+    grid-template-columns: 1fr;
+
+}
+
+main div:nth-child(1){
+    grid-area: A;
+}
+main div:nth-child(2){
+    grid-area: B;
+}
+main div:nth-child(3){
+    grid-area: C;
+}
+main div:nth-child(4){
+    grid-area: D;
+}
+}
+
+
+
+img{
+width: 100%;
+height: auto;
+
+border-radius: 6px;
+}
+
+img:hover{
+    transform: scale(1.1); // trazer a img mais pra frente
+    opacity: 0.7;
+
+}
+
+header{
+margin: 10rem 0 8rem;
+font-size: 4rem;
+text-align: center;
+animation-name: topdown;
+animation-duration: 700ms;
+
+}
+
+header p{
+color: var(--fc-secondary);
+text-transform: uppercase;
+line-height: 3.2rem;
+letter-spacing: 3px;
+margin-bottom: 1.7rem;
+    
+}
+
+header h1{
+font-size: var(--fs-heading)
+}
+
+
+.card{
+position: relative;
+}
+
+.card img {
+height: 41.6rem;
+object-fit: cover;  
+
+transition: transform 200ms;
+filter: brightness(0.5);
+
+
+}
+
+.card h2{
+position: absolute;
+bottom: 5.2rem;
+left: 2.8rem;
+
+font-size: var(--fs-heading);
+font-weight: 800;
+display: flex;
+flex-direction: column;
+gap: 2.8rem;
+}
+
+.card h2 span{
+    border-radius: 2rem;
+    background-color: var(--fc-primary);
+    font-size: var(--fs-body);
+    color: black;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    padding: 3.0rem;
+    height: 3.8rem;
+    width: fit-content;
+}
+
+
+
+@keyframes topdown{
+
+    0%{
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+   
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+}
